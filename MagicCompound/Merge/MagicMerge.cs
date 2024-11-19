@@ -2,12 +2,15 @@
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats;
 using SixLabors.ImageSharp.Processing;
+using SixLabors.ImageSharp.Formats.Png;
+using SixLabors.ImageSharp.Formats.Jpeg;
+using SixLabors.ImageSharp.Formats.Webp;
+using SixLabors.ImageSharp.Formats.Gif;
 using MagicCompound.Configs;
 using MagicCompound.Data;
 using MagicCompound.Extensions;
 using MagicCompound.Utils;
-using SixLabors.ImageSharp.PixelFormats;
-using System.Windows.Media.Media3D;
+using SixLabors.ImageSharp.Processing.Processors.Quantization;
 
 namespace MagicCompound.Merge
 {
@@ -79,7 +82,7 @@ namespace MagicCompound.Merge
 
         private static void StretchImage(this Image asset, Image baseImage, LayerInfo layer)
         {
-            switch (layer.Stretch.Capitalize())
+            switch (layer.Stretch.ToCapital())
             {
                 case "None":
                     break;
@@ -128,11 +131,11 @@ namespace MagicCompound.Merge
         {
             return format.ToLower() switch
             {
-                "png" => new SixLabors.ImageSharp.Formats.Png.PngEncoder(),
-                "jpg" => new SixLabors.ImageSharp.Formats.Jpeg.JpegEncoder(),
-                "webp" => new SixLabors.ImageSharp.Formats.Webp.WebpEncoder(),
-                "gif" => new SixLabors.ImageSharp.Formats.Gif.GifEncoder(),
-                _ => new SixLabors.ImageSharp.Formats.Png.PngEncoder() // За замовчуванням PNG
+                "png" => new PngEncoder() { ColorType = PngColorType.RgbWithAlpha },
+                "jpg" => new JpegEncoder(),
+                "webp" => new WebpEncoder(),
+                "gif" => new GifEncoder() { ColorTableMode = GifColorTableMode.Global, Quantizer = new OctreeQuantizer(new QuantizerOptions { Dither = null })},
+                _ => new PngEncoder() // За замовчуванням PNG
             };
         }
     }

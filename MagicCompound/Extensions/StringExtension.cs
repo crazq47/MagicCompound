@@ -8,6 +8,11 @@ namespace MagicCompound.Extensions
 {
     public static partial class StringExtension
     {
+        public static string ToCapital(this string input)
+        {
+            return Capitalize(input);
+        }
+
         public static string Capitalize(this string input)
         {
             if (string.IsNullOrEmpty(input))

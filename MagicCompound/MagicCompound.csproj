@@ -10,12 +10,12 @@
     <AssemblyName>Compounder</AssemblyName>
     <Authors>crazq</Authors>
     <StartupObject>MagicCompound.App</StartupObject>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
     <SignAssembly>True</SignAssembly>
     <DelaySign>False</DelaySign>
-    <AssemblyOriginatorKeyFile>E:\Visual Projects\MagicCompound#WPF_NET8_0\CompounderKey.snk</AssemblyOriginatorKeyFile>
     <Version>1.0.0</Version>
+    <AssemblyOriginatorKeyFile>E:\Visual Projects\MagicCompound#WPF_NET8_0\Compounder.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

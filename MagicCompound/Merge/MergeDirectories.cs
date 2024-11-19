@@ -43,15 +43,9 @@ namespace MagicCompound.Merge
             if (ConfigManager.IsLoaded())
             {
                 Config configuration = ConfigManager.GetConfig(config);
+                string? assetsEnvironmentKey = configuration.AssetsFolder;
 
-                return configuration.AssetsFolder switch
-                {
-                    "%ProgramFolder%" => AppContext.BaseDirectory,
-                    "%OutputFolder%" => AppDirectories.OutputDirectory,
-                    "%AssetsFolder%" => AppDirectories.AssetsDirectory,
-                    "%TargetFolder%" => Path.GetDirectoryName(MagicMerge.Target),
-                    _ => configuration.AssetsFolder?.ReplacePathMarkers() // Власна вказана тека
-                } ?? AppDirectories.AssetsDirectory;
+                return GetDirectory(assetsEnvironmentKey, AppDirectories.AssetsDirectory);
             }
             else return AppDirectories.AssetsDirectory;
         }
@@ -61,17 +55,23 @@ namespace MagicCompound.Merge
             if (ConfigManager.IsLoaded())
             {
                 Config configuration = ConfigManager.GetConfig(config);
+                string? outputEnvironmentKey = configuration.OutputFolder;
 
-                return (configuration).OutputFolder switch
-                {
-                    "%ProgramFolder%" => AppContext.BaseDirectory,
-                    "%OutputFolder%" => AppDirectories.OutputDirectory,
-                    "%AssetsFolder%" => GetAssetsFolder(configuration),
-                    "%TargetFolder%" => Path.GetDirectoryName(MagicMerge.Target),
-                    _ => configuration.OutputFolder?.ReplacePathMarkers()  // Власна вказана тека
-                } ?? AppDirectories.OutputDirectory;
+                return GetDirectory(outputEnvironmentKey, AppDirectories.OutputDirectory, GetAssetsFolder(configuration));
             }
             else return AppDirectories.OutputDirectory;
+        }
+
+        private static string GetDirectory(string? environmentKey, string baseDirectory, string? assetsDirectory = null)
+        {
+            return environmentKey switch
+            {
+                "%ProgramFolder%" => AppContext.BaseDirectory,
+                "%OutputFolder%" => AppDirectories.OutputDirectory,
+                "%AssetsFolder%" => assetsDirectory ?? AppDirectories.AssetsDirectory,
+                "%TargetFolder%" => Path.GetDirectoryName(MagicMerge.Target),
+                _ => environmentKey?.ReplacePathMarkers()  // Власна вказана тека
+            } ?? baseDirectory;
         }
     }
 }

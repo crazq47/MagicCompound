@@ -18,7 +18,7 @@ namespace MagicCompound.Data
             int x = Position.X;
             int y = Position.Y;
 
-            switch (HorizontalAlignment.Capitalize())
+            switch (HorizontalAlignment.ToCapital())
             {
                 case "%Auto%":
                     x = Position.X;
@@ -34,7 +34,7 @@ namespace MagicCompound.Data
                     break;
             }
 
-            switch (VerticalAlignment.Capitalize())
+            switch (VerticalAlignment.ToCapital())
             {
                 case "%Auto%":
                     y = Position.Y;

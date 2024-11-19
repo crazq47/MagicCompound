@@ -44,28 +44,6 @@ namespace MagicCompound.Utils
             return result == true ? openFileDialog.FileNames : [];
         }
 
-        public static int GetUniqueIndex(string directory, string? baseFileName = null, string? extension = null)
-        {
-            baseFileName ??= Path.GetFileNameWithoutExtension(directory);
-            extension ??= Path.GetExtension(directory).TrimStart('.');
-
-            int counter = 0;
-            string filePath;
-
-            do
-            {
-                string indexedFileName = counter == 0
-                    ? $"{baseFileName}.{extension}"
-                    : $"{baseFileName}({counter}).{extension}";
-
-                filePath = Path.Combine(directory, indexedFileName);
-                counter++;
-            }
-            while (File.Exists(filePath));
-
-            return counter - 1;
-        }
-
         public static string GetUniqueFilePath(string directory, string fileName, string? fileExtension = null)
         {
             string extension = (fileExtension ?? Path.GetExtension(fileName)).TrimStart('.');
@@ -90,6 +68,28 @@ namespace MagicCompound.Utils
             return uniqueIndex == 0
                 ? baseFileName
                 : $"{baseFileName}({uniqueIndex})";
+        }
+
+        public static int GetUniqueIndex(string directory, string? baseFileName = null, string? extension = null)
+        {
+            baseFileName ??= Path.GetFileNameWithoutExtension(directory);
+            extension ??= Path.GetExtension(directory).TrimStart('.');
+
+            int counter = 0;
+            string filePath;
+
+            do
+            {
+                string indexedFileName = counter == 0
+                    ? $"{baseFileName}.{extension}"
+                    : $"{baseFileName}({counter}).{extension}";
+
+                filePath = Path.Combine(directory, indexedFileName);
+                counter++;
+            }
+            while (File.Exists(filePath));
+
+            return counter - 1;
         }
 
         public static bool IsImageFile(string filePath)
