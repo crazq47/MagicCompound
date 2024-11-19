@@ -1,0 +1,102 @@
+{
+  "OutputName": "Magic Preview",
+  "OutputFormat": [
+    "jpg",
+    "gif"
+  ],
+  "OutputFolder": "%OutputFolder%",
+  "AssetsFolder": "%ProgramFolder%\\Example",
+  "Layers": [
+    {
+      "Index": 1,
+      "Asset": "1!purple overlay.png",
+      "Stretch": "none",
+      "Position": {
+        "X": 0,
+        "Y": 0,
+        "IsEmpty": true
+      },
+      "Opacity": 0.03,
+      "HorizontalAlignment": "left",
+      "VerticalAlignment": "top"
+    },
+    {
+      "Index": 2,
+      "Asset": "2!base gradient fill.png",
+      "Stretch": "none",
+      "Position": {
+        "X": 0,
+        "Y": 0,
+        "IsEmpty": true
+      },
+      "Opacity": 1.0,
+      "HorizontalAlignment": "left",
+      "VerticalAlignment": "top"
+    },
+    {
+      "Index": 3,
+      "Asset": "3!secondary gradient fill.png",
+      "Stretch": "none",
+      "Position": {
+        "X": 0,
+        "Y": 0,
+        "IsEmpty": true
+      },
+      "Opacity": 1.0,
+      "HorizontalAlignment": "right",
+      "VerticalAlignment": "bottom"
+    },
+    {
+      "Index": 4,
+      "Asset": "4!magic logo.png",
+      "Stretch": "none",
+      "Position": {
+        "X": 192,
+        "Y": -32,
+        "IsEmpty": false
+      },
+      "Opacity": 1.0,
+      "HorizontalAlignment": "right",
+      "VerticalAlignment": "center"
+    },
+    {
+      "Index": 5,
+      "Asset": "5!magic border.png",
+      "Stretch": "none",
+      "Position": {
+        "X": 0,
+        "Y": 0,
+        "IsEmpty": true
+      },
+      "Opacity": 1.0,
+      "HorizontalAlignment": "center",
+      "VerticalAlignment": "center"
+    },
+    {
+      "Index": 6,
+      "Asset": "6!magic title.png",
+      "Stretch": "none",
+      "Position": {
+        "X": 804,
+        "Y": -32,
+        "IsEmpty": false
+      },
+      "Opacity": 1.0,
+      "HorizontalAlignment": "right",
+      "VerticalAlignment": "center"
+    },
+    {
+      "Index": 7,
+      "Asset": "7!descpription.png",
+      "Stretch": "none",
+      "Position": {
+        "X": 0,
+        "Y": 160,
+        "IsEmpty": false
+      },
+      "Opacity": 1.0,
+      "HorizontalAlignment": "center",
+      "VerticalAlignment": "bottom"
+    }
+  ]
+}
