@@ -1,0 +1,1 @@
+# MagicCompound#WPF_NET8_0
