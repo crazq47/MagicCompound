@@ -1,27 +1,3 @@
-## 🔰 Foreword
-🇬🇧 A preview is one of the requirements for publishing mods on Nexus, and having a localized preview makes it easier to visually distinguish a translation from other mods without closely examining the page title.
-
-🇺🇦 Прев'ю — є однією з вимог для публікації модифікацій на Nexus, а локалізоване прев'ю дає можливість візуально відрізнити переклад від інших модів, не вглядаючись у назву сторінки.
-
-🇬🇧 However, there are some *"pitfalls"*, such as the `webp` format, which **Nexus Mods** automatically converts all uploaded images into. This format is optimized for storing large images with an alpha channel, but not every editor supports it. If you're lucky, you might find a user-made plugin that adds support for it. Moreover, **Nexus** itself does not allow downloading images in this format directly from the site.
-
-🇺🇦 Однак, існують й *«підводні камені»*, у вигляді формату `webp`, у який конвертуються усі зображення, завантажені на **Nexus Mods**, адже цей формат оптимізований для зберігання важких зображень з альфа-каналом. Проблема полягає в тому, що не кожен редактор підтримує цей формат, дуже пощастить, якщо знайдеться користувацький плагін, який додає його підтримку, крім цього, сам **Nexus** не дозволяє його завантажити на сам сайт.
-
-## The Problem 🥝
-🇬🇧 I had a brief "conversation" (if it can be called that) with Dimocracy on Nexus about him removing text from the previews of his translations to save time when preparing them for publication.
-
-This made me ponder the question:
-> _"How can we simplify the process of preparing and publishing content on Nexus?"_
-
-🇺🇦 У мене з Dimocracy на Nexus була невелика розмова, стосовно того, що він прибрав написи на прев'ю своїх перекладів, аби зекономити час на оформленні перекладів.
-
-Після цього я задумався над питанням: 
-> *«Як можна спростити процес оформлення  та публікації матеріалів на Nexus?»*
-
-🇬🇧 Here's the result of my *"reflections"*: _a small program that automatically overlays pre-made assets onto images._
-
-🇺🇦 І ось результат моїх *«роздумів»*: _невелика програма, яка накладає готові асети на зображення в автоматичному режимі._
-
 # 🔮Magic Compound
 🇬🇧 **Magic Compound** lets you combine pre-designed assets with a target image in an automated manner, regardless of the number of assets. Additionally, the program is highly configurable.
 
